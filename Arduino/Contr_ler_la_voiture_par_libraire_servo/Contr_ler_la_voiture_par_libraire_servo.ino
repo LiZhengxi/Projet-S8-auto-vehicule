@@ -39,7 +39,7 @@ void loop() {
        Serial.println(cm);         //permet de lire la résulat sur le console
         if(cm>100)                  // si la distance est >1m, le robot avance
         {
-          moteurContinu.writeMicroseconds(1600);      
+         moteurContinu.writeMicroseconds(1585);      
         }
         else
         {    
