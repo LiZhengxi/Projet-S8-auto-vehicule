@@ -10,7 +10,7 @@
 float cm;           //La distance capturer par le capteur ultra-son
 Servo myservo;      // Creer un objet myservo(pour contrôler le servomoteur)
 Servo moteurContinu;//Creer un objet moteurContinu(pour contrôler le moteur continu)
-
+float temp;
 void setup() { 
   pinMode(Trig, OUTPUT);  
   pinMode(Echo, INPUT);
@@ -37,13 +37,21 @@ void loop() {
   temp = float(pulseIn(Echo, HIGH)); // stocker le tps de retour
   cm = (temp * 17 )/1000;           // conversion de temps de retour vers la distance
        Serial.println(cm);         //permet de lire la résulat sur le console
-        if(cm>100)                  // si la distance est >1m, le robot avance
+        if(cm>10)                  // si la distance est >1m, le robot avance
         {
          moteurContinu.writeMicroseconds(1585);      
+         delay(1000);
+         moteurContinu.writeMicroseconds(0);
+         delay(2000);
+          moteurContinu.writeMicroseconds(1000);
+        
         }
         else
         {    
                moteurContinu.writeMicroseconds(1500);              //sinon il va arrêter
+               
+               moteurContinu.writeMicroseconds(1350);
+               delay(500);
         }
      delay(300);
   }

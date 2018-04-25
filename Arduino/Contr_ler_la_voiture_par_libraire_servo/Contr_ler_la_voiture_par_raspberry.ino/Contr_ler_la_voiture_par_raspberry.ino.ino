@@ -1,48 +1,74 @@
-#include <Servo.h>  //Utiliser le librairie interne d'arduino
-#define Trig 2      //Pin Tring connecter avec IO D2
-#define Echo 3      //Pin Echo connecter avec IO D3 
-float cm;           //La distance capturer par le capteur ultra-son
-float temp;
-Servo myservo;      // Creer un objet myservo(pour contrôler le servomoteur)
-Servo moteurContinu;//Creer un objet moteurContinu(pour contrôler le moteur continu)
+/*
+ *  name: Arduino 
+ *  date : 2018.04.20
+ *  autheur : LiZhengxi
+ *  comment : arduino receive the information sended by the raspberry and command 2 moteurs to do different things
+ *  and also, receive the information from the ultrason 
+ */
+#include <Servo.h>  //Use the internal librairie ofarduino
+#define Trig 2      //Pin Tring connect with IO D2
+#define Echo 3      //Pin Echo connect with IO D3 
+float cm;           //distance of the objet
+float temp;         //time for the ultrason receive information
+Servo myservo;      // creat an objet myservo(for the servomoteur)
+Servo moteurContinu;//Creat an objet moteurContinu(for the DC motor)
 const int ledPin = 13;
-char info;
-char info1;
+char info;        //information received
+char info1;       //information received previously
 void setup(){
+  /*
+   * initialize the pin and the communication between raspberry and arduino
+   */
   pinMode(ledPin, OUTPUT);
   pinMode(Trig, OUTPUT);  
   pinMode(Echo, INPUT);
   myservo.attach(9);        // attaches the servo on pin 9 to the servo object
   moteurContinu.attach(8);  // attches the servo on pin 8 to the motor continue
-  Serial.begin(250000);      // Configurer le baud-rate
+  Serial.begin(250000);      // Set the baud-rate
   moteurContinu.write(1500);
-  delay(4000);
+  delay(4000);            //give some time for the arduino initialize the DC motor
 }
 
 void loop(){
-   //给Trig发送一个低高低的短时间脉冲,触发测距
-  digitalWrite(Trig, LOW); //给Trig发送一个低电平
-  delayMicroseconds(2);    //等待 2微妙
-  digitalWrite(Trig,HIGH); //给Trig发送一个高电平
-  delayMicroseconds(10);    //等待 10微妙
-  digitalWrite(Trig, LOW); //给Trig发送一个低电平
+   //This code explain how the ultrason works
+  digitalWrite(Trig, LOW); //Send Trig a low level voltage
+  delayMicroseconds(2);    //wait for 2ms
+  digitalWrite(Trig,HIGH); //Send Trig a high level voltage
+  delayMicroseconds(10);    //wait for 10ms
+  digitalWrite(Trig, LOW); //Send Trig a low level voltage
   
-  temp = float(pulseIn(Echo, HIGH)); //存储回波等待时间,
-  //pulseIn函数会等待引脚变为HIGH,开始计算时间,再等待变为LOW并停止计时
-  //返回脉冲的长度
+  temp = float(pulseIn(Echo, HIGH)); //stocke the return time 
+  //when the function pulseIn is HIGH,begin to record the time,waiting to the LOW stop the record
   
-  //声速是:340m/1s 换算成 34000cm / 1000000μs => 34 / 1000
-  //因为发送到接收,实际是相同距离走了2回,所以要除以2
-  //距离(厘米)  =  (回波时间 * (34 / 1000)) / 2
-  //简化后的计算公式为 (回波时间 * 17)/ 1000
+  //sound velocity:340m/1s conversion: 34000cm / 1000000μs => 34 / 1000
+  //the time record sending  and receiving,in fact is the same distance for 2 times,so /2
+  //distance(cm)  =  (time * (34 / 1000)) / 2
+  //so (time * 17)/ 1000
   
-  cm = (temp * 17 )/1000; //把回波时间换算成cm
+  cm = (temp * 17 )/1000; 
+  /*
+   * if the distance <20cm, the car will stop
+   * else the car will move according to the raspberry
+   */
   if(cm<20)
   {
     moteurContinu.writeMicroseconds(1500);
   }
   
  else{
+  /*
+   * check the bus is available
+   * 
+   * comment : 
+   * for the servomotor : myservo.write(x);
+   * x=90 in center
+   * x=45 turn left
+   * x=135 turn right
+   * for the dc motor : moteurContinu.writeMicroseconds(y);
+   * y=1500 stop
+   * y=1595 advance
+   * y=1350 come back
+   */
 if (Serial.available()) {
   info=Serial.read();
    if(info=='i')
@@ -53,33 +79,7 @@ if (Serial.available()) {
 { moteurContinu.writeMicroseconds(1500);
  myservo.write(135);
 }
-/*
-else if(info=='a')
-{
-  myservo.write(90);
-  moteurContinu.writeMicroseconds(1595);
-}*/
-/*
-else if(info=='r')
-{
-  myservo.write(75);
-}
-else if(info=='l')
-{
-  myservo.write(115);
-}
-*/
-/*else if(info=='p')
-{ 
-  if(info1!='p')
-  {
-  moteurContinu.writeMicroseconds(1350);
-  delay(3000);
-  moteurContinu.writeMicroseconds(1600);
-  delay(2000);
-}
-}
-*/
+
 else if(info=='f')
 {
   moteurContinu.writeMicroseconds(1500);
@@ -100,14 +100,13 @@ else if(info=='c')
 
 else if(info=='z')
 {
-  moteurContinu.writeMicroseconds(1600);
+  moteurContinu.writeMicroseconds(1595);
 
 }
 else
 { 
   moteurContinu.write(1350);
 }
-info1=info;
 }
  }
 }
