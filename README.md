@@ -15,18 +15,19 @@ maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de l
 * Langage C/C++(arduino) 
 * Soliworks(imprimant 3D) 
 * Egale (Carte électronique)
+<br>
 ![Feux](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png)
 
 
 ## Travail en équipe
 Nous avions choisi pour cela l’application Trello qui est un outil de gestion de projet en ligne. Il est basé sur une organisation des projets en planches listant des cartes, 
 chacune représen-tant des taches que nous devions réaliser au fur et à mesure.
-![Trello](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Trello.png)
+![Trello](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/trello.png)
 
 
 ## Détection panneau stop et feux de signalisation
 ![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
-![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneu)
+![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur)
 
 
  
