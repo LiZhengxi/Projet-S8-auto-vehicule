@@ -19,7 +19,7 @@ maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de l
 
 <br>
 
-<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png" width = "500"> 
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png" width = "300"> 
 
 ## Travail en équipe
 Nous avions choisi pour cela l’application Trello qui est un outil de gestion de projet en ligne. Il est basé sur une organisation des projets en planches listant des cartes, 
