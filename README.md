@@ -1,4 +1,4 @@
-# Projet-S8-Système visuel de véhicule autonome
+# Projet-S8 Système visuel de véhicule autonome
 
 ## Présentation de la voiture autonome 
 L’école a choisi de mettre à notre disposition une voiture radiocommandé tout terrain électrique 1/10 -ème avec un émetteur à volant Absima CR2S.V2 déjà monté. La voiture nous a été livrée avec un pack Ni-Mh de 1800 mA. Celui-ci devra être chargé durant 4heures à l’aide du chargeur d’origine pour pouvoir profiter pleinement des différentes fonctionnalités de la voiture. La voiture est fournie avec une mécanique pré montée. Ce qui sous-entend quel n’a pas été choisi au hasard par l’école, vu l’objectif de mettre en place de l’électronique embarquée de notre part. La vitesse
@@ -37,3 +37,19 @@ Le prétraitement d'image est fait par openCV. Et la partie suivant est par une 
 ![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
 #### Détection feux de signalisation
 ![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg)
+
+## Détection le trajectoire
+#### Recherché la ligne 
+Cette méthode est un peu limitée parce qu’il ne peut que détecter les lignes d’une seule couleur. De plus, le résultat obtenu sera aussi perturbé par les autres objets qui ont le même couleur que la ligne. 2-1) Compter le nombre pixel 
+Une fois, les traitements de couleur sont faits, nous pouvons compter le nombre pixel de certain couleur d’une image. Si celui à gauche est plus, la voiture va tourner à gauche, si-non à droite. Mais cette méthode n’est pas possible de faire sur le Raspberry. Comme la performance de Raspberry n’est pas assez pour traiter tous les pixels de chaque image. Nous avons testé le programme c’est super lent. Du coup, nous avons abandonné.
+
+
+#### Chercher le barycentre 	
+Cette fois-ci nous utilisons la même méthode de traitement image. Mais au lieu de calculer le nombre de pixel, nous cherchons le barycentre de contour que nous avons trouvé. Puis, commander la voiture d’après le barycentre.
+
+#### Décider la direction 
+1) Sélectionner trois régions intéresser (ROI) puis analyser le barycentre de chaque région
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/3barrycentre.jpg" width="100" > 
+2) Comparer avec les barycentres en précédent 
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/ligne.jpg" width = "100"> 
+3) Comparer les deux résultats et choisit le meilleur direction 
