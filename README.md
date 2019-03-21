@@ -49,7 +49,7 @@ Cette fois-ci nous utilisons la même méthode de traitement image. Mais au lieu
 
 #### Décider la direction 
 1) Sélectionner trois régions intéresser (ROI) puis analyser le barycentre de chaque région
-<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/3barrycentre.jpg" width="100" > 
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/3barrycentre.jpg" width="500" > 
 2) Comparer avec les barycentres en précédent 
-<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/ligne.jpg" width = "100"> 
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/ligne.png" width = "500"> 
 3) Comparer les deux résultats et choisit le meilleur direction 
