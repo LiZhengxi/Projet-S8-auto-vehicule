@@ -33,5 +33,7 @@ Tout d'abord, nous avons cherché la partie en rouge sur chaque photo. Une fois 
 a une partie en rouge de sufarce supérieur à un certain valeur. Le programme va considéré qu'il y a soit le panneau
 soit le feux rouge.<br> 
 Le prétraitement d'image est fait par openCV. Et la partie suivant est par une modèle de tensorflow qu'on a entrainné en avant. Et ce modèle va appliquer sur la partie qu'on a détecté en rouge. Et le programme va juger si c'est un panneau ou pas. Si c'est un panneau, la voiture va arrêter pendant 5s après redémarrer. Sinon, c'est-t-à dire forcément c'est le feux rouge. Donc, la voiture va attendre le feux vert allume et redémarrér 
+#### Détection panneau stop
 ![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
+#### Détection feux de signalisation
 ![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg)
