@@ -35,10 +35,15 @@ Le prétraitement d'image est fait par openCV. Et la partie suivant est par une 
 #### Détection panneau stop
 
 <img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg" width = "500"> 
+
 #### Détection feux de signalisation
+
 <img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg" width = "500"> 
+
 ## Détection le trajectoire
+
 #### Recherché la ligne 
+
 Cette méthode est un peu limitée parce qu’il ne peut que détecter les lignes d’une seule couleur. De plus, le résultat obtenu sera aussi perturbé par les autres objets qui ont le même couleur que la ligne. 2-1) Compter le nombre pixel 
 Une fois, les traitements de couleur sont faits, nous pouvons compter le nombre pixel de certain couleur d’une image. Si celui à gauche est plus, la voiture va tourner à gauche, si-non à droite. Mais cette méthode n’est pas possible de faire sur le Raspberry. Comme la performance de Raspberry n’est pas assez pour traiter tous les pixels de chaque image. Nous avons testé le programme c’est super lent. Du coup, nous avons abandonné.
 
