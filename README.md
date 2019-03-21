@@ -29,7 +29,7 @@ chacune représen-tant des taches que nous devions réaliser au fur et à mesure
 
 ## Détection panneau stop et feux de signalisation
 ![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
-![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur)
+![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg)
 
 
  
