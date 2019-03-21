@@ -11,10 +11,22 @@ maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de l
 ## Logiciels utilisés
 * Python 
 * openCV(library)
-* Tensorflow(traitement le panneur stop et les feux )
+* Tensorflow(traitement le panneu stop et les feux)
 * Langage C/C++(arduino) 
 * Soliworks(imprimant 3D) 
 * Egale (Carte électronique)
+![Feux](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png)
+
+
+## Travail en équipe
+Nous avions choisi pour cela l’application Trello qui est un outil de gestion de projet en ligne. Il est basé sur une organisation des projets en planches listant des cartes, 
+chacune représen-tant des taches que nous devions réaliser au fur et à mesure.
+![Trello](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Trello.png)
+
+
+## Détection panneau stop et feux de signalisation
+![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
+![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneu)
 
 
  
