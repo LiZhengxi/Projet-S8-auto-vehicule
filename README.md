@@ -55,6 +55,6 @@ Cette fois-ci nous utilisons la même méthode de traitement image. Mais au lieu
 1) Sélectionner trois régions intéresser (ROI) puis analyser le barycentre de chaque région
 <img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/3barrycentre.jpg" width="500" > 
 <img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/ligne.png" width = "500"> 
-2) Comparer avec les barycentres en précédent 
+2) Comparer avec les barycentres en précédent <br>
 3) Comparer les deux résultats et choisit le meilleur direction 
 <img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/organigramme.png" width = "500"> 
