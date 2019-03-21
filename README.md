@@ -18,14 +18,12 @@ maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de l
 
 <br>
 
-![Feux](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png)
-
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.png" width = "500"> 
 
 ## Travail en équipe
 Nous avions choisi pour cela l’application Trello qui est un outil de gestion de projet en ligne. Il est basé sur une organisation des projets en planches listant des cartes, 
 chacune représen-tant des taches que nous devions réaliser au fur et à mesure.
-![Trello](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/trello.png)
-
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/trello.png" width = "500"> 
 
 ## Détection panneau stop et feux de signalisation
 Au niveau de détection de panneau stop ou le feux, nous avons utilisé le même stratégie.
@@ -34,10 +32,10 @@ a une partie en rouge de sufarce supérieur à un certain valeur. Le programme v
 soit le feux rouge.<br> 
 Le prétraitement d'image est fait par openCV. Et la partie suivant est par une modèle de tensorflow qu'on a entrainné en avant. Et ce modèle va appliquer sur la partie qu'on a détecté en rouge. Et le programme va juger si c'est un panneau ou pas. Si c'est un panneau, la voiture va arrêter pendant 5s après redémarrer. Sinon, c'est-t-à dire forcément c'est le feux rouge. Donc, la voiture va attendre le feux vert allume et redémarrér 
 #### Détection panneau stop
-![Feux detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg)
-#### Détection feux de signalisation
-![Panneur detection](https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg)
 
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/feux.jpg" width = "500"> 
+#### Détection feux de signalisation
+<img src="https://github.com/LiZhengxi/Projet-S8-auto_vehicule/blob/master/Panneur.jpg" width = "500"> 
 ## Détection le trajectoire
 #### Recherché la ligne 
 Cette méthode est un peu limitée parce qu’il ne peut que détecter les lignes d’une seule couleur. De plus, le résultat obtenu sera aussi perturbé par les autres objets qui ont le même couleur que la ligne. 2-1) Compter le nombre pixel 
