@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+	function isHidden(oDiv){
+      var vDiv = document.getElementById(oDiv);
+      vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+    }
+</script></head>
+<body>
+<div style="cursor:hand" onclick="isHidden('div1')"><b>Ici pour plus d'info technique</b></div>
+		<div id ="div1" style="display:none">隐藏内容</div>
+</body>
+</html>

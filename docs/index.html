@@ -20,7 +20,18 @@
 {"@type":"WebSite","url":"https://lizhengxi.github.io/Projet-S8-auto-vehicule/","headline":"Projet-S8 Système visuel de véhicule autonome","name":"Projet-S8-auto-vehicule","description":"ESIGELEC projet véhicule autonome S8","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+  <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+
+
+  <script>
+    function isHidden(oDiv){
+        var vDiv = document.getElementById(oDiv);
+        vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
+      }
+  </script>
+<link rel="stylesheet" href="style.css" type="text/css" >
+
+</head>
 
   <body data-gr-c-s-loaded="true">
 
@@ -29,8 +40,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/LiZhengxi/Projet-S8-auto-vehicule">View on GitHub</a>
 
-          <h1 id="project_title">Projet-S8-auto-vehicule</h1>
-          <h2 id="project_tagline">ESIGELEC projet véhicule autonome S8</h2>
+          <h1 id="project_title">Projet véhicule autonome</h1>
+          <h2 id="project_tagline">simulation de système visuel de véhicule autonome</h2>
 
           
         </header>
@@ -39,11 +50,20 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1 id="projet-s8-système-visuel-de-véhicule-autonome">Projet-S8 Système visuel de véhicule autonome</h1>
+        
 
-<h2 id="présentation-de-la-voiture-autonome">Présentation de la voiture autonome</h2>
-<p>L’école a choisi de mettre à notre disposition une voiture radiocommandé tout terrain électrique 1/10 -ème avec un émetteur à volant Absima CR2S.V2 déjà monté. La voiture nous a été livrée avec un pack Ni-Mh de 1800 mA. Celui-ci devra être chargé durant 4heures à l’aide du chargeur d’origine pour pouvoir profiter pleinement des différentes fonctionnalités de la voiture. La voiture est fournie avec une mécanique pré montée. Ce qui sous-entend quel n’a pas été choisi au hasard par l’école, vu l’objectif de mettre en place de l’électronique embarquée de notre part. La vitesse
-maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de la faire rouler à une telle vitesse sachant qu’elle devra détecter certains objets et que l’environnement choisie ne nous le permet pas. La voiture devra subir quelques modifications de notre part pour pouvoir rouler en toute</p>
+<h2 id="présentation-de-la-voiture-autonome">Présentation de projet</h2>
+
+<p>
+  Projet simulation de système visuel de véhicule autonome sur une voiture radiocommandé est un projet proposé par notre école ESIGLEC. Le but de ce projet est l’établissent un système visuel sur une voiture radiocommandée. 
+  <br>
+  En gros, nous sommes équipe de 4 et nous avons 5 semaines purement pour ce projet. Pendant les 5 semaines, nous n’avons pas les cours et les exams. Donc, nous avons travaillé pendant 5 semaines sur la même chose. Nous avons 5 équipes qui a parallèlement faites le même projet. Et en fin, nous avons sélectionné celui correspond plus à cahier de charge. 
+  <br>
+  Le cahier de charge de ce projet est de créer un système qui permet de reconnaitre les panneau stop, les feux de signalisation, les obstacles et la trajectoire. En gros, la voiture doit bien suivre la trajectoire et en même temps reconnaitre les feux, les panneau stop et les obstacles. La voiture doit faire les différentes actions d’après ce qu’elle a rencontré (panneau stop, feux, obstacles). 
+  <br>
+  Nous avons en fin bien fini ce projet. Notre voiture répond toutes les demandes de cahier de charge. Mais nous avons beaucoup de détails à améliorer.
+  
+</p>
 
 <p><img src="./Projet-S8 Système visuel de véhicule autonome _ Projet-S8-auto-vehicule_files/Vehicule.jpg" width="500"></p>
 
@@ -52,12 +72,18 @@ maximale de la voiture est de 40 km/heures mais il sera difficile pour nous de l
 <video src="./Projet-S8 Système visuel de véhicule autonome _ Projet-S8-auto-vehicule_files/feux_vert.mp4" autoplay="true" controls="controls" height="500">
   votre navigateur ne support pas vidéo
   </video>
-  <h6>Passer tranquilement</h6>
+  <p>Passer tranquilement</p>
   <h4>En feux rouge</h4>
   <video src="./Projet-S8 Système visuel de véhicule autonome _ Projet-S8-auto-vehicule_files/feux_rouge.mp4" controls="controls">
     votre navigateur ne support pas vidéo
     </video>
-    <h6>Une petite sourcis parce que l'ultra-son a détecté obstacle</h6>
+    <p>Une petite sourcis parce que l'ultra-son a détecté obstacle</p>
+
+
+     
+
+  <div style="cursor:hand" onclick="isHidden('div1')"><a class = 'text' href="#" onclick="return false">Plus d'information sur les détails techniques</a>  </div>
+	<div id ="div1" style="display:none">
 <h2 id="présentation-du-matériel">Présentation du matériel</h2>
 <p><img src="./Projet-S8 Système visuel de véhicule autonome _ Projet-S8-auto-vehicule_files/materiel.png" width="500"></p>
 
@@ -111,6 +137,18 @@ Une fois, les traitements de couleur sont faits, nous pouvons compter le nombre 
 <p>2) Comparer avec les barycentres en précédent </p>
 <p>3) Comparer les deux résultats et choisit le meilleur direction </p>
 <img src="./Projet-S8 Système visuel de véhicule autonome _ Projet-S8-auto-vehicule_files/organigramme.png" width="500"></p>
+  </div>
+  
+  <br>
+  <div style="cursor:hand" onclick="isHidden('div2')"> <a class = 'text' href="#" onclick="return false">Plus d'information sur gestion d'équipe</a> </div>
+  <div id ="div2" style="display:none">
+  <p>En gros, nous avons séparé notre travail en 3 sprints.</p>
+  </div>
+<br>
+  <div style="cursor:hand" onclick="isHidden('div3')"> <a class = 'text' href="#" onclick="return false">Point à améliorer</a> </div>
+  <div id ="div3" style="display:none">
+  <p>En niveau technique</p>
+  </div>
 
       </section>
     </div>
